@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import DefaultHOC from "./HOC/DefaultHOC";
+
+function HomePage(){
+    return(
+        <div>HomePage</div>
+    );
+};
+
+
+function ContactPage(){
+    return(
+        <div>Contact Page</div>
+    );
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return ( 
+    <>
+       <DefaultHOC path="/" exact component={HomePage}/>
+       <DefaultHOC path="/Contact" exact component={ContactPage}/>
+    </>
+    );
 }
 
 export default App;
